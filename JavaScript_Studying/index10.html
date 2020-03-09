@@ -1,0 +1,97 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Events: Task 1</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      button {
+        display: block;
+        margin: 20px 0 20px 20px;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+        <canvas>
+
+        </canvas>
+    </section>
+    <div class="button-bar">
+        <h1>1</h1>
+    </div>
+    <button class="off">Machine is off</button>
+
+  </body>
+  <script>
+    let btn = document.querySelector('.off');
+
+    btn.addEventListener("click",function(e){
+        if(btn.className === 'on'){
+            btn.textContent = "Machine is off";
+            btn.className = "off";
+        } else {
+            btn.textContent = "Machine is on";
+            btn.className = "on";
+        }
+    });
+
+    let canvas = document.querySelector('canvas');
+    let ctx = canvas.getContext('2d');
+
+    function drawCircle(x, y, size) {
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.beginPath();
+    ctx.fillStyle = 'black';
+    ctx.arc(x, y, size, 0, 2 * Math.PI);
+    ctx.fill();
+    }
+
+    let x = 50;
+    let y = 50;
+    const size = 30;
+
+    drawCircle(x, y, size);
+
+    window.addEventListener('keypress',(e)=>{
+        switch(e.key){
+            case 'a':
+                x -=2;
+                break;
+            case 'd':
+                x +=2;
+                break;
+            case 'w':
+                y -=2;
+                break;
+            case 's':
+                y +=2;
+                break;
+        }
+        drawCircle(x,y,size);
+    });
+
+    let buttonBar = document.querySelector('.button-bar');
+    let section = document.querySelector('section');
+    
+    function setColor(e){
+        buttonBar.style.backgroundColor = e.target.getAttribute('data-color');
+    }
+    buttonBar.addEventListener('click', setColor);
+  </script>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>lonDon</li>
+        <li>ManCHESTer</li>
+        <li>BiRmiNGHAM</li>
+        <li>liVERpoOL</li>
+    </ul>
+    <script>
+        var list = document.querySelector('body ul');
+        list.innerHTML = '';
+        console.log(list);
+        var cities = ['lonDon', 'ManCHESTer', 'BiRmiNGHAM', 'liVERpoOL'];
+        
+        for ( var i= 0; i < cities.length ; i++){
+            var input = cities[i];
+            var lower = input.toLowerCase();
+            var firstLetter = lower.slice(0,1);
+            var capitalized = lower.replace(firstLetter, firstLetter.toUpperCase());
+            var result = capitalized;
+            var listItem = document.createElement('li');
+            listItem.textContent = result;
+            list.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>
