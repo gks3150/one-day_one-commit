@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Object-oriented JavaScript inheritance</title>
+    </head>
+
+    <body>
+    <div>
+        <label for="jscode">Enter code:</label>
+        <input type="text" id="jscode">
+        <button>Submit code</button>
+    </div>
+
+    <p></p>
+    </body>
+
+    <script>
+        // 12번 예제와 다르게 ECMAScript 2015에 따르면 새로운 클래스 작성 방식을 지원한다.
+        // 그에 따라 Class 방식으로 재 작성한 예제는 다음과 같다.
+        class Person {
+            constructor(first, last, age, gender, interests) {
+                this.name = {
+                    first,
+                    last
+                };
+                this.age = age;
+                this.gender = gender;
+                this.interests = interests;
+            }
+
+            greeting() {
+                console.log(`Hi! I'm ${this.name.first}`);
+            };
+            farewell() {
+                console.log(`${this.name.first} has left the building. Bye for now!`);
+            };
+        }
+        let han = new Person('Han', 'Solo', 25, 'male', ['Smuggling']);
+        let leia = new Person('Leia', 'Organa', 19, 'female' ['Government']);
+
+        // class 문법으로의 상속
+        class Teacher extends Person {
+            constructor(first, last, age, gender, interests, subject, grade) {
+            super(first, last, age. gender, interests);
+            this._subject = subject;
+            this.grade = grade;
+            }
+            // getter, setter 기능 
+            get subject() {
+                return this._subject;
+            }
+
+            set subject(newSubject) {
+                this._subject = newSubject;
+            }
+        }
+        let snape = new Teacher('Severus', 'Snape', 58, 'male', ['Potions'], 'Dark arts', 5);
+        snape.greeting(); // Hi! I'm Severus.
+        snape.farewell(); // Severus has left the building. Bye for now.
+        snape.age // 58
+        snape.subject; // Dark arts
+    </script>
+</html>
