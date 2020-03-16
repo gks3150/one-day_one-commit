@@ -1,0 +1,14 @@
+body {height: 100vh; background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);}
+.bar {width: 5px; height: 400px; background: #fff; position: absolute; left: 0; top: 0; right: 0; bottom: 0; margin: auto;
+/* animation-name: bar;
+animation-duration: 2s;
+animation-timing-function: ease-in-out;
+animation-iteration-count: 100; */
+animation: bar 2s ease-in-out 100;}
+
+@keyframes bar {
+	0% {transform: rotate(0); height: 0;}
+	25% {transform: rotate(0); height: 400px;}
+	50% {transform: rotate(180deg); height: 400px;}
+	100% {transform: rotate(180deg); height: 0;}
+}

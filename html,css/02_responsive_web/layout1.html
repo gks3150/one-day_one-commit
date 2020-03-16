@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>layout1</title>
+	<style>
+		#wrap {
+			width: 1000px;
+			margin: 0 auto;
+		}
+		header {
+			width: 1000px;
+			height: 100px;
+			background: #030303;
+		}
+		nav {
+			width: 1000px;
+			height: 100px;
+			background: #555;
+		}
+		aside {
+			float: left;
+			width: 300px;
+			height: 600px;
+			background: #333;
+		}
+		sections {
+			float: left;
+			width: 700px;
+			height: 600px;
+			background: #444;
+		}
+		footer {
+			clear: both;
+			width: 1000px;
+			height: 100px;
+			background: #555;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<header></header>
+		<nav></nav>
+		<aside></aside>
+		<section></section>
+		<footer></footer>
+	</div>
+</body>
+</html>
+
+<!-- 단점! 시맨틱 태그는 최신 태그이기 때문에 ie 8 이하에는 지원이 안됨.

@@ -1,0 +1,10 @@
+body {height: 100vh; background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);}
+.loading {width: 20px; height: 100px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+animation: loading ease-in-out 1s 100;}
+.loading .circle1 {width: 20px; height: 20px; border-radius: 50%; background: #fff;}
+.loading .circle2 {width: 20px; height: 20px; border-radius: 50%; background: #fff; margin-top: 60px;}
+
+@keyframes loading {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+}

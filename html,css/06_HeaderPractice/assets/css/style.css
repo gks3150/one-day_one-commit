@@ -1,0 +1,36 @@
+/* Global */
+:root {
+	--text-color: #f0f4f5;
+	--background-color : #263343;
+	--accent-color: #d49466;
+}
+
+/* layout */
+body {box-sizing: border-box;}
+#header {}
+
+/* 가운데 영역 잡기 */
+.container {position: relative;}
+.row {}
+
+/* header */
+.header {display: flex; justify-content: space-between; align-items: center; background-color: var(--background-color); padding: 8px 12px;}
+.header_left > i {color: var(--accent-color); font-size: 24px;}
+.header_left a {color: var(--text-color); font-size: 24px;}
+.header_center {display: flex; padding-left: 0;}
+.header_center li {padding: 8px 12px;}
+.header_center li a {font-size: 15px; color: var(--text-color);}
+.header_center li:hover {border-radius: 4px; background-color: var(--accent-color); transition: background-color .9s ease;}
+.header_right {display: flex;}
+.header_right li i {color: var(--text-color); padding: 8px 12px; font-size: 15px;}
+.header_btn {display: none; position: absolute; right: 32px; color: var(--accent-color); font-size: 24px;}
+
+/* responsive */
+@media (max-width:768px){
+	.header {flex-direction: column; align-items: flex-start; padding: 8px 24px;}
+	.header_center {display: none; flex-direction: column; text-align: center; width: 100%;}
+	.header_right {display: none; justify-content: center; width: 100%;}
+	.header_btn {display: block;}
+	.header_center.active,
+	.header_right.active {display: flex;}
+}	

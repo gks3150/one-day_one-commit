@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Layout3</title>
+	<style>
+		* { margin: 0; padding: 0;}
+		#wrap { width: 1200px; margin: 0 auto;}
+		body { background-color: #e3f2fd; }
+		.header { width: 100%; height: 100px; background: #81d4fa;}
+		.nav { float: left; height: 900px; width: 30%; background: #4fc3f7;}
+		.article1 { float: left; height: 300px; width: 70%; background: #29b6f6;}
+		.article2 { float: left; height: 300px; width: 70%; background: #03a9f4;}
+		.article3 { float: left; height: 300px; width: 70%; background: #039be5;}
+		.footer { clear:both; height: 100px; width: 100%; background: #0288d1;}
+		
+		/* 화면 너비 0~ 1220px */
+		@media (max-width: 1240px) {
+			#wrap { width: 100%; }
+			.article1 { height: 450px}
+			.article2 { height: 450px}
+			.article3 { width: 100%; }
+		}
+		
+		/* 화면 너비 0~ 760px */
+		@media (max-width: 768px) {
+			#wrap { width: 100%; }
+			.nav { width: 100%; height: 300px;}
+			.article1 { width: 50%; }
+			.article2 { width: 50%; }
+		}
+		
+		/* 화면 너비 0~ 480px */
+		@media (max-width: 768px) {
+			.article1 { width: 100%; }
+			.article2 { width: 100%; }
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<header class="header"></header>
+		<nav class="nav"></nav>
+		<section class="article1"></section>
+		<section class="article2"></section>
+		<section class="article3"></section>
+		<footer class="footer"></footer>
+	</div>
+</body>
+</html>
